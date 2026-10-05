@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install build tools
+        run: npm ci
+
+      - name: Build deep dives from Markdown
+        run: npm run build
+
       - name: Check JavaScript syntax
         run: |
           node --check assets/app.js
@@ -45,6 +51,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build deep dives from Markdown
+        run: |
+          npm ci
+          npm run build
 
       - uses: actions/configure-pages@v5
 

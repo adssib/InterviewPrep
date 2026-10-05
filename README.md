@@ -11,7 +11,43 @@ Practice questions for CS, backend, DevOps, cloud and AI interviews: 27 topics, 
 - Filter by **Unanswered** or **Missed** to drill weak spots.
 - Progress is saved in your browser (localStorage), so it's per device.
 
-## Adding questions
+## Adding a deep dive (no code)
+
+Deep dives are open-ended questions with follow-ups. Each one is a Markdown file in `deep-dives/`.
+
+1. On GitHub, open the `deep-dives/` folder and open `_TEMPLATE.md`. Copy its contents.
+2. Click **Add file → Create new file**, name it something like `docker-image-too-big.md`, paste, and fill it in.
+3. Commit. The pipeline builds it and deploys the site in about a minute.
+
+The template explains every field. The short version:
+
+```md
+---
+title: Docker image is too big
+type: scenario        # chain | scenario | compare | estimate | checklist
+topic: docker         # links to a quiz drill (optional)
+tags: docker, security
+---
+
+## Question
+The question as the interviewer asks it.
+
+## Short answer
+The 30-second version. Hidden until you click "Show answer".
+
+## Follow-ups
+### A follow-up question?
+Its answer. Follow-ups are revealed one at a time.
+
+## Any other heading
+Steps, tables, diagrams, checklists (- [ ] item), code blocks. Shown after the answer.
+```
+
+If a file has a mistake (missing title, unknown type or topic), the pipeline fails with a message naming the file and the problem, and the live site stays as it was.
+
+To preview locally: `npm install`, `npm run build`, then open `index.html`.
+
+## Adding quiz questions
 
 Questions live in `data/*.js`. Each topic is one `addTopic(...)` call, and each question is a row:
 
@@ -27,4 +63,4 @@ No build step; it's plain HTML, CSS and JS.
 
 ## Deploys
 
-Every push to `main` runs `.github/workflows/deploy.yml`: it checks script syntax, runs `node scripts/validate.js` on the question data, and deploys to GitHub Pages only if both pass. Pull requests run the checks without deploying. Run the validator locally before pushing with `node scripts/validate.js`.
+Every push to `main` runs `.github/workflows/deploy.yml`: it builds the deep dives from Markdown, checks script syntax, runs `node scripts/validate.js` on the question data, and deploys to GitHub Pages only if both pass. Pull requests run the checks without deploying. Run the validator locally before pushing with `node scripts/validate.js`.
