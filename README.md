@@ -23,4 +23,8 @@ The third value is the index of the correct option. Options are shuffled when di
 
 To add a new topic group, add its name to `GROUP_ORDER` in `assets/app.js`. To add a new data file, add a `<script>` tag for it in `index.html` before `assets/app.js`.
 
-No build step; it's plain HTML, CSS and JS served by GitHub Pages from `main`.
+No build step; it's plain HTML, CSS and JS.
+
+## Deploys
+
+Every push to `main` runs `.github/workflows/deploy.yml`: it checks script syntax, runs `node scripts/validate.js` on the question data, and deploys to GitHub Pages only if both pass. Pull requests run the checks without deploying. Run the validator locally before pushing with `node scripts/validate.js`.
