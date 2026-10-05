@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interview Prep Drills</title>
+<meta name="description" content="Practice questions for CS, backend, DevOps, cloud and AI interviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  try { var t = localStorage.getItem('ip-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open table of contents" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+  </button>
+  <a class="brand" href="#home">Interview Prep <span>Drills</span></a>
+  <div class="topbar-right">
+    <span class="total-progress" id="totalProgress"></span>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle light or dark theme">
+      <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2a8 8 0 1 0 0 16V2z" fill="currentColor"/><circle cx="10" cy="10" r="7.2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Table of contents">
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Search topics or questions" autocomplete="off">
+    </div>
+    <div id="toc"></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="content" id="content" tabindex="-1"></main>
+</div>
+
+<script src="data/_init.js"></script>
+<script src="data/foundations.js"></script>
+<script src="data/languages.js"></script>
+<script src="data/infra.js"></script>
+<script src="data/devops.js"></script>
+<script src="data/architecture.js"></script>
+<script src="data/ai.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
