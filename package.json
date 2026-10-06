@@ -1,0 +1,12 @@
+{
+  "name": "interview-prep-drills",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-deepdives.js",
+    "validate": "node scripts/validate.js",
+    "check": "npm run build && npm run validate"
+  },
+  "devDependencies": {
+    "marked": "15.0.12"
+  }
+}
